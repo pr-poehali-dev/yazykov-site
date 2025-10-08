@@ -6,6 +6,7 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("biography");
+  const [selectedImage, setSelectedImage] = useState<{url: string; title: string; description: string} | null>(null);
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -349,13 +350,14 @@ const Index = () => {
             {galleryImages.map((image, index) => (
               <Card 
                 key={index} 
-                className="overflow-hidden border-2 border-[#8B4513] shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+                className="overflow-hidden border-2 border-[#8B4513] shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer group"
+                onClick={() => setSelectedImage(image)}
               >
-                <div className="aspect-square bg-[#EDD9C3] overflow-hidden">
+                <div className="aspect-square bg-[#EDD9C3] overflow-hidden relative">
                   <img 
                     src={image.url} 
                     alt={image.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
@@ -365,6 +367,9 @@ const Index = () => {
                       }
                     }}
                   />
+                  <div className="absolute inset-0 bg-[#2C1810]/0 group-hover:bg-[#2C1810]/30 transition-all duration-300 flex items-center justify-center">
+                    <Icon name="Maximize2" className="text-[#F5E6D3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={40} />
+                  </div>
                 </div>
                 <div className="p-4 bg-[#F5E6D3]">
                   <p className="text-center text-[#2C1810] font-semibold mb-1">
@@ -377,6 +382,33 @@ const Index = () => {
               </Card>
             ))}
           </div>
+
+          {selectedImage && (
+            <div 
+              className="fixed inset-0 bg-[#2C1810]/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div className="relative max-w-5xl w-full max-h-[90vh] bg-[#F5E6D3] rounded-lg overflow-hidden shadow-2xl border-4 border-[#DAA520]" onClick={(e) => e.stopPropagation()}>
+                <button 
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 z-10 bg-[#8B4513] hover:bg-[#2C1810] text-[#F5E6D3] rounded-full p-2 transition-colors shadow-lg"
+                >
+                  <Icon name="X" size={24} />
+                </button>
+                <div className="p-4">
+                  <img 
+                    src={selectedImage.url} 
+                    alt={selectedImage.title}
+                    className="w-full h-auto max-h-[70vh] object-contain rounded"
+                  />
+                  <div className="mt-4 text-center">
+                    <h3 className="text-2xl font-bold text-[#8B4513] mb-2">{selectedImage.title}</h3>
+                    <p className="text-[#2C1810]/70">{selectedImage.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

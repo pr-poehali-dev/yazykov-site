@@ -83,7 +83,7 @@ const Index = () => {
         </div>
         <div className="container mx-auto text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold text-[#8B4513] mb-4 animate-fade-in">
-            Русский Поэт
+            Языков Николай Михайлович
           </h2>
           <p className="text-xl md:text-2xl text-[#2C1810] italic">
             1803—1846

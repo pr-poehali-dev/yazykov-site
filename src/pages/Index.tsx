@@ -28,16 +28,101 @@ const Index = () => {
       title: "Водопад",
       year: "1830",
       excerpt: "Шуми, шуми с крутой вершины, / Не умолкай, поток седой!..."
+    },
+    {
+      title: "Землетрясенье",
+      year: "1829",
+      excerpt: "Поколебался мир: природа / Внезапной ужаса полна..."
+    },
+    {
+      title: "А.Н. Очкину",
+      year: "1824",
+      excerpt: "Мы любим шумные пиры, / Хмельной товарищества глас..."
+    },
+    {
+      title: "Тригорское",
+      year: "1826",
+      excerpt: "Тригорское! Я никогда / Не позабуду дней веселых..."
+    }
+  ];
+
+  const interestingFacts = [
+    {
+      icon: "Sparkles",
+      title: "Студенческий поэт",
+      text: "Языков провел в Дерптском университете 8 лет вместо положенных 4, наслаждаясь студенческой жизнью и не спеша с экзаменами."
+    },
+    {
+      icon: "Heart",
+      title: "Друг Пушкина",
+      text: "Пушкин называл Языкова 'надеждой нашей словесности' и посвящал ему стихи. Их дружба началась в 1826 году."
+    },
+    {
+      icon: "Wine",
+      title: "Поэт застолья",
+      text: "Языков был известен своими застольными песнями. Его стихи 'Из страны, страны далёкой' стали популярной студенческой песней."
+    },
+    {
+      icon: "BookHeart",
+      title: "Романтик природы",
+      text: "Поэт черпал вдохновение в природе, особенно любил водные стихии — реки, водопады, море."
+    },
+    {
+      icon: "Feather",
+      title: "Мастер ритма",
+      text: "Белинский высоко ценил стихи Языкова за их 'удалую разгульность', энергию и звучность."
+    },
+    {
+      icon: "Home",
+      title: "Языково",
+      text: "Родовое имение Языково в Симбирской губернии стало местом литературных встреч и творческого вдохновения."
+    }
+  ];
+
+  const galleryImages = [
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Yazykov_by_Repin.jpg/400px-Yazykov_by_Repin.jpg",
+      title: "Портрет Н.М. Языкова",
+      description: "Работа И.Е. Репина"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yazykov.jpg/400px-Yazykov.jpg",
+      title: "Николай Языков",
+      description: "Портрет из собрания музея"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Yazykov_N_M.jpg/400px-Yazykov_N_M.jpg",
+      title: "Н.М. Языков в молодости",
+      description: "Литография XIX века"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dorpat_university.jpg/500px-Dorpat_university.jpg",
+      title: "Дерптский университет",
+      description: "Место учебы поэта (1822-1829)"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Simbirsk_city_view.jpg/500px-Simbirsk_city_view.jpg",
+      title: "Симбирск",
+      description: "Родной город Языкова"
+    },
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Yazykovo_estate.jpg/500px-Yazykovo_estate.jpg",
+      title: "Усадьба Языково",
+      description: "Родовое имение в Симбирской губернии"
     }
   ];
 
   const timeline = [
-    { year: "1803", event: "Родился в Симбирске в дворянской семье" },
-    { year: "1822", event: "Поступил в Дерптский университет" },
-    { year: "1826", event: "Издание первых стихотворений" },
-    { year: "1829", event: "Написана поэма «Пловец»" },
-    { year: "1831", event: "Знакомство с Пушкиным" },
-    { year: "1846", event: "Скончался в Москве" }
+    { year: "1803", event: "Родился 4 марта в Симбирске в богатой дворянской семье" },
+    { year: "1814", event: "Начало обучения в Петербургском горном кадетском корпусе" },
+    { year: "1822", event: "Поступил в Дерптский университет на философский факультет" },
+    { year: "1824", event: "Первые публикации стихов в альманахе 'Северные цветы'" },
+    { year: "1826", event: "Знакомство и начало переписки с Пушкиным" },
+    { year: "1829", event: "Написаны поэмы 'Пловец' и 'Землетрясенье'" },
+    { year: "1831", event: "Переезд в имение Языково, начало тяжелой болезни" },
+    { year: "1838", event: "Лечение за границей в Германии и Италии" },
+    { year: "1843", event: "Возвращение в Россию, жизнь в Москве" },
+    { year: "1846", event: "Скончался 26 декабря в Москве, похоронен в Симбирске" }
   ];
 
   return (
@@ -53,7 +138,7 @@ const Index = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-2 mt-4 justify-center">
-            {["biography", "works", "poems", "gallery", "timeline", "bibliography"].map((section) => (
+            {["biography", "facts", "works", "poems", "gallery", "timeline", "bibliography"].map((section) => (
               <Button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -65,6 +150,7 @@ const Index = () => {
                 }`}
               >
                 {section === "biography" && "Биография"}
+                {section === "facts" && "Интересные факты"}
                 {section === "works" && "Творчество"}
                 {section === "poems" && "Произведения"}
                 {section === "gallery" && "Галерея"}
@@ -118,11 +204,42 @@ const Index = () => {
                 Пушкин высоко ценил талант Языкова и называл его одним из лучших поэтов своего времени.
               </p>
               <p className="text-lg">
-                В последние годы жизни Языков страдал от тяжелой болезни позвоночника. Несмотря на физические 
-                страдания, он продолжал писать. Умер поэт 26 декабря 1846 года в Москве.
+                С 1831 года Языков страдал от тяжелой болезни позвоночника, что вынудило его покинуть университет. 
+                Он провел несколько лет на лечении в Германии и Италии (1838-1843). Несмотря на физические 
+                страдания, поэт продолжал писать до конца жизни.
+              </p>
+              <p className="text-lg">
+                Языков умер 26 декабря 1846 года в Москве в возрасте 43 лет. Его тело было перевезено в Симбирск 
+                и похоронено в родовом имении Языково. Творчество поэта оказало значительное влияние на развитие 
+                русской романтической поэзии.
               </p>
             </div>
           </Card>
+        </div>
+      </section>
+
+      <section id="facts" className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex items-center gap-3 mb-8">
+            <Icon name="Lightbulb" className="text-[#8B4513]" size={40} />
+            <h2 className="text-4xl font-bold text-[#8B4513]">Интересные факты</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {interestingFacts.map((fact, index) => (
+              <Card 
+                key={index} 
+                className="p-6 bg-[#F5E6D3] border-2 border-[#8B4513] shadow-lg hover:shadow-2xl transition-all hover:scale-105"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-[#DAA520] rounded-full flex items-center justify-center mb-4">
+                    <Icon name={fact.icon as any} className="text-[#2C1810]" size={32} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#8B4513] mb-3">{fact.title}</h3>
+                  <p className="text-[#2C1810] leading-relaxed">{fact.text}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -139,10 +256,15 @@ const Index = () => {
                   <Icon name="Scroll" size={24} />
                   Ранний период (1822-1831)
                 </h3>
-                <p className="text-lg">
+                <p className="text-lg mb-4">
                   Дерптский период — время расцвета таланта Языкова. Его стихи этого времени полны 
                   жизнерадостности, энергии и свободолюбия. Он воспевал студенческое братство, 
-                  пиры и дружеские встречи.
+                  пиры и дружеские встречи. Стихотворения 'Пловец', 'А.Н. Очкину', 'Элегия' принесли 
+                  ему широкую известность.
+                </p>
+                <p className="text-lg">
+                  В это время Языков создает яркие образы природы, моря, бурь. Его поэзия наполнена 
+                  движением, динамикой, звучностью. Белинский писал о 'стихийной силе' его стихов.
                 </p>
               </div>
               <Separator className="bg-[#DAA520]" />
@@ -151,10 +273,15 @@ const Index = () => {
                   <Icon name="PenTool" size={24} />
                   Зрелое творчество (1831-1846)
                 </h3>
-                <p className="text-lg">
+                <p className="text-lg mb-4">
                   В зрелый период творчества тональность стихов Языкова меняется. Появляются 
                   философские размышления, религиозные мотивы. Поэт обращается к темам веры, 
                   смысла жизни и предназначения человека.
+                </p>
+                <p className="text-lg">
+                  Болезнь и страдания наложили отпечаток на творчество. Стихи становятся более 
+                  глубокими, размеренными, появляется тема смирения и принятия судьбы. Языков 
+                  сближается со славянофилами и пишет патриотические стихотворения.
                 </p>
               </div>
             </div>
@@ -204,17 +331,32 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-[#8B4513]">Галерея</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((item) => (
+            {galleryImages.map((image, index) => (
               <Card 
-                key={item} 
-                className="overflow-hidden border-2 border-[#8B4513] shadow-xl hover:shadow-2xl transition-all"
+                key={index} 
+                className="overflow-hidden border-2 border-[#8B4513] shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
               >
-                <div className="aspect-square bg-gradient-to-br from-[#8B4513] to-[#2C1810] flex items-center justify-center">
-                  <Icon name="User" className="text-[#F5E6D3] opacity-30" size={80} />
+                <div className="aspect-square bg-[#EDD9C3] overflow-hidden">
+                  <img 
+                    src={image.url} 
+                    alt={image.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#8B4513] to-[#2C1810]"><svg class="w-20 h-20 text-[#F5E6D3] opacity-30" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>';
+                      }
+                    }}
+                  />
                 </div>
                 <div className="p-4 bg-[#F5E6D3]">
-                  <p className="text-center text-[#2C1810] font-semibold">
-                    Портрет Н.М. Языкова
+                  <p className="text-center text-[#2C1810] font-semibold mb-1">
+                    {image.title}
+                  </p>
+                  <p className="text-center text-[#2C1810]/70 text-sm">
+                    {image.description}
                   </p>
                 </div>
               </Card>

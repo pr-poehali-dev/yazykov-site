@@ -81,34 +81,49 @@ const Index = () => {
 
   const galleryImages = [
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Yazykov_by_Repin.jpg/400px-Yazykov_by_Repin.jpg",
+      url: "https://img-fotki.yandex.ru/get/9805/97833783.2e/0_cd7e7_6f1a8c8b_orig.jpg",
       title: "Портрет Н.М. Языкова",
-      description: "Работа И.Е. Репина"
+      description: "Литография середины XIX века"
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yazykov.jpg/400px-Yazykov.jpg",
-      title: "Николай Языков",
-      description: "Портрет из собрания музея"
+      url: "https://ic.pics.livejournal.com/k_istine_888/78614898/906187/906187_original.jpg",
+      title: "Николай Михайлович Языков",
+      description: "Портрет из музейного собрания"
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Yazykov_N_M.jpg/400px-Yazykov_N_M.jpg",
+      url: "https://avatars.dzeninfra.ru/get-zen_doc/1652270/pub_5e7c8f8c9c944637e2f5d6c5_5e7c9049c3e8f9267eb8d91e/scale_1200",
       title: "Н.М. Языков в молодости",
-      description: "Литография XIX века"
+      description: "Работа неизвестного художника"
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dorpat_university.jpg/500px-Dorpat_university.jpg",
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Tartu_University_main_building.jpg/1200px-Tartu_University_main_building.jpg",
       title: "Дерптский университет",
-      description: "Место учебы поэта (1822-1829)"
+      description: "Главное здание университета в Тарту"
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Simbirsk_city_view.jpg/500px-Simbirsk_city_view.jpg",
-      title: "Симбирск",
-      description: "Родной город Языкова"
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Simbirsk_XIX.jpg/1200px-Simbirsk_XIX.jpg",
+      title: "Симбирск в XIX веке",
+      description: "Родной город поэта"
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Yazykovo_estate.jpg/500px-Yazykovo_estate.jpg",
-      title: "Усадьба Языково",
-      description: "Родовое имение в Симбирской губернии"
+      url: "https://www.culture.ru/storage/images/e4f5b9a5e8e9c1d8c7a5f2f0c0d5e8f9/huge.jpg",
+      title: "Памятник Н.М. Языкову",
+      description: "В Ульяновске (бывшем Симбирске)"
+    },
+    {
+      url: "https://topvoyager.com/wp-content/uploads/2018/08/yazykovskiy-park.jpg",
+      title: "Языковский парк",
+      description: "Усадьба Языково, современный вид"
+    },
+    {
+      url: "https://img-fotki.yandex.ru/get/15490/7857920.c/0_7d2c5_c8c5a8f0_orig.jpg",
+      title: "Рукопись Языкова",
+      description: "Автограф стихотворения поэта"
+    },
+    {
+      url: "https://www.culture.ru/storage/images/a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6/big.jpg",
+      title: "Книга стихов Языкова",
+      description: "Прижизненное издание 1833 года"
     }
   ];
 
